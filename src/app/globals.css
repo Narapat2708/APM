@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+/* ซ่อน icon ปฏิทิน / เวลา (Chrome, Edge, Safari) */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Firefox */
+input[type="date"],
+input[type="time"] {
+  appearance: none;
+  -moz-appearance: textfield;
+}

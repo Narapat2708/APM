@@ -86,15 +86,15 @@ export default function Page() {
               <table className="w-full table-fixed text-left text-white">
                 <thead className="bg-gradient-to-r from-purple-600 to-blue-500">
                   <tr>
-                    <th className="px-4 py-3 w-36">วันที่</th>
-                    <th className="px-4 py-3 w-30">เวลา</th>
-                    <th className="px-4 py-3 w-48">ลูกค้า</th>
-                    <th className="px-4 py-3 w-64">เรื่อง</th>
-                    <th className="px-4 py-3 w-40">โปรแกรม</th>
-                    <th className="px-4 py-3 w-48">สถานที่</th>
-                    <th className="px-4 py-3 w-48">ผู้เข้าร่วม</th>
-                    <th className="px-4 py-3 w-32">สถานะ</th>
-                    <th className="px-4 py-3 w-35">จัดการ</th>
+                    <th className="px-4 py-3 w-22">วันที่</th>
+                    <th className="px-4 py-3 w-14">เวลา</th>
+                    <th className="px-4 py-3 w-30">ลูกค้า</th>
+                    <th className="px-4 py-3 w-80">รายละเอียด</th>
+                    <th className="px-4 py-3 w-28">โปรแกรม</th>
+                    <th className="px-4 py-3 w-46">สถานที่</th>
+                    <th className="px-4 py-3 w-45">ผู้เข้าร่วม</th>
+                    <th className="px-4 py-3 w-15">สถานะ</th>
+                    <th className="px-4 py-3 w-23">จัดการ</th>
                   </tr>
                 </thead>
 
@@ -116,8 +116,8 @@ export default function Page() {
                           {item.customer || "-"}
                         </td>
 
-                        <td className="px-4 py-3 break-words whitespace-normal">
-                          {item.subject}
+                        <td className="px-4 py-3">
+                          <div className="whitespace-pre-wrap break-words">{item.subject}</div>
                         </td>
 
                         {/* PROGRAM */}

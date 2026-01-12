@@ -37,6 +37,8 @@ export default function AppointmentFormPage() {
         "พี่อ้อม",
         "พี่นัท",
         "พี่ต้น",
+        "ฟิต",
+        "ดีน",
     ]
 
     const dropdownRef = useRef(null)
@@ -115,25 +117,47 @@ export default function AppointmentFormPage() {
                 >
                     <div>
                         <label className="block text-sm mb-1">วันที่</label>
-                        <input
-                            name="date"
-                            type="date"
-                            value={form.date}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-3 py-2 rounded-md bg-black/20 text-white"
-                        />
+
+                        <div
+                            className="relative cursor-pointer"
+                            onClick={() =>
+                                document.getElementById("date-input")?.showPicker?.()}
+                        >
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300 pointer-events-none">
+                                📅
+                            </span>
+
+                            <input
+                                id="date-input"
+                                name="date"
+                                type="date"
+                                value={form.date}
+                                onChange={handleChange}
+                                className="w-full pl-10 pr-3 py-2 rounded-md bg-black/20 text-white appearance-none cursor-pointer"
+                            />
+                        </div>
                     </div>
+
 
                     <div>
                         <label className="block text-sm mb-1">เวลา</label>
-                        <input
-                            name="time"
-                            type="time"
-                            value={form.time}
-                            onChange={handleChange}
-                            className="w-full px-3 py-2 rounded-md bg-black/20 text-white"
-                        />
+                        <div
+                            className="relative cursor-pointer"
+                            onClick={() => document.getElementById("time-input")?.showPicker?.()}
+                        >
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300 pointer-events-none">
+                                ⏰
+                            </span>
+
+                            <input
+                                id="time-input"
+                                name="time"
+                                type="time"
+                                value={form.time}
+                                onChange={handleChange}
+                                className="w-full pl-10 pr-3 py-2 rounded-md bg-black/20 text-white appearance-none cursor-pointer"
+                            />
+                        </div>
                     </div>
 
                     <div className="md:col-span-2">
@@ -150,14 +174,14 @@ export default function AppointmentFormPage() {
 
 
                     <div className="md:col-span-2">
-                        <label className="block text-sm mb-1">เรื่อง</label>
-                        <input
+                        <label className="block text-sm mb-1">รายละเอียด</label>
+                        <textarea
                             name="subject"
                             value={form.subject}
                             onChange={handleChange}
+                            placeholder="รายละเอียดการนัดหมาย"
+                            className="w-full px-3 py-3 rounded-md bg-black/20 text-white min-h-[140px] resize-vertical outline-none"
                             required
-                            className="w-full px-3 py-2 rounded-md bg-black/20 text-white"
-                            placeholder="ประชุม/ติดตั้ง/สอนงาน ฯลฯ"
                         />
                     </div>
 
